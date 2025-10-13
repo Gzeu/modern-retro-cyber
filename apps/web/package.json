@@ -1,0 +1,40 @@
+{
+  "name": "web",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc",
+    "clean": "rimraf build .cache"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.12.0",
+    "@remix-run/react": "^2.12.0",
+    "@remix-run/serve": "^2.12.0",
+    "@modern-retro-cyber/ui": "workspace:*",
+    "@modern-retro-cyber/config": "workspace:*",
+    "isbot": "^5.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "viem": "^2.18.0",
+    "wagmi": "^2.12.0",
+    "@tanstack/react-query": "^5.56.0",
+    "@rainbow-me/rainbowkit": "^2.1.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.12.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^9.10.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.6",
+    "rimraf": "^5.0.7"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
