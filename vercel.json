@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "builds": [
+    {
+      "src": "apps/web/build/server/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["apps/web/build/**"]
+      }
+    },
+    {
+      "src": "apps/web/build/client/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/build/client/(.*)",
+      "dest": "/apps/web/build/client/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/apps/web/build/server/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "apps/web/build/server/index.js": {
+      "includeFiles": "apps/web/build/**"
+    }
+  }
+}

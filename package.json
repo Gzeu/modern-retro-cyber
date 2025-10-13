@@ -18,7 +18,8 @@
     "create-component": "tsx tools/create-component.ts",
     "create-contract": "tsx tools/create-contract.ts",
     "analyze": "turbo run analyze",
-    "security-check": "turbo run security-check"
+    "security-check": "turbo run security-check",
+    "vercel-build": "cd apps/web && pnpm build"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
