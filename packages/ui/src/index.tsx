@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Brand = () => (
   <span style={{ 
-    fontFamily: 'monospace', 
+    fontFamily: 'JetBrains Mono, monospace', 
     color: '#00FFD1',
     fontSize: 'inherit',
     fontWeight: 'bold',
@@ -20,16 +20,18 @@ export const Button = ({
   onClick, 
   variant = 'primary',
   disabled = false,
-  size = 'medium'
+  size = 'medium',
+  style
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
   disabled?: boolean;
   size?: 'small' | 'medium' | 'large';
+  style?: React.CSSProperties;
 }) => {
   const baseStyles = {
-    fontFamily: 'monospace',
+    fontFamily: 'JetBrains Mono, monospace',
     cursor: disabled ? 'not-allowed' : 'pointer',
     opacity: disabled ? 0.6 : 1,
     fontWeight: 'bold',
@@ -58,7 +60,8 @@ export const Button = ({
     },
     ghost: {
       background: 'transparent',
-      color: '#FF2D95'
+      color: '#FF2D95',
+      border: '1px solid transparent'
     }
   };
 
@@ -69,7 +72,8 @@ export const Button = ({
       style={{
         ...baseStyles,
         ...sizeStyles[size],
-        ...variantStyles[variant]
+        ...variantStyles[variant],
+        ...style
       }}
     >
       {children}
@@ -80,11 +84,13 @@ export const Button = ({
 export const Card = ({ 
   children, 
   title,
-  glowing = false
+  glowing = false,
+  style
 }: {
   children: React.ReactNode;
   title?: string;
   glowing?: boolean;
+  style?: React.CSSProperties;
 }) => (
   <div style={{
     border: glowing ? '1px solid #00FFD1' : '1px solid #FF2D95',
@@ -95,13 +101,14 @@ export const Card = ({
     boxShadow: glowing 
       ? '0 0 20px #00FFD140, inset 0 0 20px #00FFD110' 
       : '0 0 15px #FF2D9520',
-    transition: 'all 0.3s ease'
+    transition: 'all 0.3s ease',
+    ...style
   }}>
     {title && (
       <h3 style={{ 
         color: '#00FFD1', 
         margin: '0 0 1rem 0',
-        fontFamily: 'monospace',
+        fontFamily: 'JetBrains Mono, monospace',
         fontSize: '1.2rem',
         fontWeight: 'bold'
       }}>
@@ -115,17 +122,19 @@ export const Card = ({
 export const Badge = ({
   children,
   variant = 'primary',
-  size = 'small'
+  size = 'small',
+  style
 }: {
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'success' | 'warning';
   size?: 'small' | 'medium';
+  style?: React.CSSProperties;
 }) => {
   const variants = {
-    primary: { bg: '#00FFD1', color: '#0A0A0F' },
-    secondary: { bg: '#FF2D95', color: '#FFFFFF' },
-    success: { bg: '#00FF88', color: '#0A0A0F' },
-    warning: { bg: '#FFB800', color: '#0A0A0F' }
+    primary: { background: '#00FFD1', color: '#0A0A0F' },
+    secondary: { background: '#FF2D95', color: '#FFFFFF' },
+    success: { background: '#00FF88', color: '#0A0A0F' },
+    warning: { background: '#FFB800', color: '#0A0A0F' }
   };
 
   const sizes = {
@@ -138,11 +147,12 @@ export const Badge = ({
       ...variants[variant],
       ...sizes[size],
       borderRadius: '4px',
-      fontFamily: 'monospace',
+      fontFamily: 'JetBrains Mono, monospace',
       fontWeight: 'bold',
       textTransform: 'uppercase',
       letterSpacing: '0.5px',
-      display: 'inline-block'
+      display: 'inline-block',
+      ...style
     }}>
       {children}
     </span>
@@ -162,7 +172,10 @@ export const LoadingSpinner = ({ size = 24 }: { size?: number }) => (
   />
 );
 
-// CSS-in-JS Animation (to be added to global styles)
+// Export gaming components
+export { default as TokenMinerGame } from './gaming/TokenMinerGame';
+
+// Global styles for animations
 export const globalStyles = `
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -177,5 +190,40 @@ export const globalStyles = `
 @keyframes glow {
   0%, 100% { box-shadow: 0 0 5px #00FFD1; }
   50% { box-shadow: 0 0 20px #00FFD1, 0 0 30px #00FFD1; }
+}
+
+@keyframes particleFloat {
+  0% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-50px) scale(0.5); 
+  }
+}
+
+/* Cyber theme scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00FFD1, #FF2D95);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FF2D95, #9D4EDD);
+}
+
+/* Selection styles */
+::selection {
+  background: #00FFD150;
+  color: #FFFFFF;
 }
 `;
