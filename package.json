@@ -1,0 +1,56 @@
+{
+  "name": "modern-retro-cyber",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "contracts"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write .",
+    "clean": "turbo run clean && rimraf node_modules",
+    "setup": "pnpm install && pnpm build",
+    "create-component": "tsx tools/create-component.ts",
+    "create-contract": "tsx tools/create-contract.ts",
+    "analyze": "turbo run analyze",
+    "security-check": "turbo run security-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "prettier": "^3.3.3",
+    "eslint": "^9.10.0",
+    "typescript": "^5.6.3",
+    "tsx": "^4.19.0",
+    "rimraf": "^5.0.7",
+    "@changesets/cli": "^2.27.0"
+  },
+  "keywords": [
+    "monorepo",
+    "remix",
+    "web3",
+    "gaming",
+    "crypto",
+    "typescript",
+    "turborepo",
+    "pnpm",
+    "blockchain",
+    "ethereum",
+    "react",
+    "viem",
+    "wagmi"
+  ],
+  "author": {
+    "name": "George Pricop",
+    "url": "https://github.com/Gzeu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gzeu/modern-retro-cyber.git"
+  },
+  "license": "MIT"
+}
