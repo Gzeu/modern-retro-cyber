@@ -1,0 +1,9 @@
+{
+  "name": "@modern-retro-cyber/tsconfig",
+  "version": "0.0.1",
+  "main": "index.js",
+  "files": ["base.json", "nextjs.json", "library.json"],
+  "publishConfig": {
+    "access": "public"
+  }
+}
