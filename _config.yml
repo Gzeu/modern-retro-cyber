@@ -1,0 +1,42 @@
+# GitHub Pages Configuration
+title: "Modern Retro Cyber"
+description: "The Future of Web3 Gaming Development - A production-ready monorepo template for building crypto games with Remix, TypeScript, and cutting-edge Web3 tools."
+url: "https://gzeu.github.io"
+baseurl: "/modern-retro-cyber"
+
+# Build settings
+theme: minima
+markdown: kramdown
+highlighter: rouge
+
+# Social links
+github_username: Gzeu
+twitter_username: modern_retro_cyber
+
+# SEO
+lang: en
+author:
+  name: George Pricop
+  email: pricopgeorge@gmail.com
+
+# Analytics
+google_analytics: # Add your GA tracking ID here
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - apps/
+  - packages/
+  - contracts/
+  - .github/
+  - README.md
+  - package.json
+  - pnpm-lock.yaml
+  - turbo.json
+  - .gitignore
+
+# Include
+include:
+  - _pages
+  - assets
+  - docs

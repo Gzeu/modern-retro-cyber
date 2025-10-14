@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Modern Retro Cyber</title>
+    <meta name="description" content="Complete documentation for Modern Retro Cyber - Web3 gaming development framework">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #00FFD1;
+            --accent: #FF2D95;
+            --secondary: #9D4EDD;
+            --bg: #0A0A0F;
+            --surface: #1A1A2E;
+            --text: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: var(--surface);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00FFD1 0%, #FF2D95 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .sidebar {
+            background: var(--surface);
+            padding: 30px;
+            border-right: 1px solid var(--accent);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 8px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+        
+        .sidebar a:hover {
+            color: var(--primary);
+        }
+        
+        .sidebar .active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: var(--bg);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: auto;
+        }
+        
+        .highlight {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--accent);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="brand">modern-retro-cyber</a>
+            <div>
+                <a href="https://github.com/Gzeu/modern-retro-cyber" target="_blank" style="color: var(--primary); text-decoration: none; margin-left: 20px;">💻 GitHub</a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="main">
+        <aside class="sidebar">
+            <h3 style="color: var(--primary); margin-bottom: 20px;">📚 Documentation</h3>
+            <ul>
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#components">UI Components</a></li>
+                <li><a href="#gaming">Gaming Features</a></li>
+                <li><a href="#web3">Web3 Integration</a></li>
+                <li><a href="#deployment">Deployment</a></li>
+                <li><a href="#contributing">Contributing</a></li>
+            </ul>
+        </aside>
+        
+        <main class="content">
+            <section id="overview">
+                <h1>🚀 Modern Retro Cyber Documentation</h1>
+                
+                <div class="highlight">
+                    <strong>🌟 Welcome to the future of Web3 gaming development!</strong><br/>
+                    This documentation will guide you through everything you need to know to build amazing crypto games.
+                </div>
+                
+                <p>
+                    Modern Retro Cyber is a production-ready monorepo template that combines the best of modern web development 
+                    with cutting-edge Web3 technology. Whether you're building the next viral crypto game or just learning 
+                    Web3 development, this framework has everything you need.
+                </p>
+                
+                <h2 id="installation">⚡ Quick Installation</h2>
+                
+                <div class="code-block">
+<span style="color: var(--accent);"># Magic setup - everything configured in 60 seconds</span>
+curl -fsSL https://raw.githubusercontent.com/Gzeu/modern-retro-cyber/main/scripts/install.sh | bash
+
+<span style="color: var(--accent);"># Or clone manually</span>
+git clone https://github.com/Gzeu/modern-retro-cyber.git
+cd modern-retro-cyber
+pnpm install && pnpm dev
+                </div>
+                
+                <h2 id="architecture">🏢 Architecture Overview</h2>
+                
+                <p>Our monorepo is structured for maximum developer productivity and maintainability:</p>
+                
+                <div class="code-block">
+modern-retro-cyber/
+├── apps/
+│   ├── web/                    # Main Remix application
+│   └── admin/                  # Admin dashboard
+├── packages/
+│   ├── ui/                     # React component library
+│   ├── config/                 # Shared configurations
+│   └── tsconfig/               # TypeScript configurations
+├── contracts/                  # Smart contracts (Hardhat)
+└── .github/workflows/          # CI/CD automation
+                </div>
+                
+                <h2 id="components">🎨 UI Components</h2>
+                
+                <p>Our UI library includes gaming-optimized React components:</p>
+                
+                <div class="code-block">
+import { Button, Card, Badge, Brand, TokenMinerGame } from '@modern-retro-cyber/ui';
+
+// Gaming-first components
+&lt;TokenMinerGame 
+  onMint={(tokens) => mintToWallet(tokens)}
+  theme="retro-cyber"
+  animations="smooth"
+/&gt;
+                </div>
+                
+                <h2 id="gaming">🎮 Gaming Features</h2>
+                
+                <p>Built-in gaming mechanics that make Web3 games engaging:</p>
+                
+                <ul>
+                    <li>🎮 <strong>Interactive Mining:</strong> Click-to-earn mechanics with visual feedback</li>
+                    <li>📈 <strong>Level Progression:</strong> XP system with increasing mining rates</li>
+                    <li>🔄 <strong>Auto-Mining:</strong> Passive income generation</li>
+                    <li>🎨 <strong>Particle Effects:</strong> Smooth animations and visual rewards</li>
+                    <li>💎 <strong>Real Rewards:</strong> Mint actual ERC-20 tokens from gameplay</li>
+                </ul>
+                
+                <h2 id="web3">🔗 Web3 Integration</h2>
+                
+                <p>Modern, type-safe Web3 development with the latest tools:</p>
+                
+                <div class="code-block">
+// Type-safe smart contract interactions
+import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { parseEther } from 'viem';
+
+const { writeContract } = useWriteContract();
+
+// Mint gaming tokens
+writeContract({
+  address: CONTRACT_ADDRESS,
+  abi: MRC_ABI,
+  functionName: 'mineTokens',
+  args: [parseEther('100')]
+});
+                </div>
+                
+                <h2 id="deployment">🚀 Deployment</h2>
+                
+                <p>Deploy your Web3 game to production with zero configuration:</p>
+                
+                <div class="highlight">
+                    <strong>🌍 Live Sites:</strong><br/>
+                    • <strong>GitHub Pages:</strong> <a href="https://gzeu.github.io/modern-retro-cyber" style="color: var(--primary);">gzeu.github.io/modern-retro-cyber</a><br/>
+                    • <strong>Vercel Apps:</strong> Ready for production deployment<br/>
+                    • <strong>Alternative Platforms:</strong> Fly.io, Render.com, Railway support ready
+                </div>
+                
+                <h2 id="contributing">🤝 Contributing</h2>
+                
+                <p>Join our community of Web3 gaming developers! Check out our <a href="https://github.com/Gzeu/modern-retro-cyber/blob/main/CONTRIBUTING.md" style="color: var(--primary);">Contributing Guide</a> to get started.</p>
+                
+                <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--surface); border-radius: 16px;">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">🚀 Ready to Build the Future?</h3>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://github.com/Gzeu/modern-retro-cyber" target="_blank" class="btn btn-primary" style="background: var(--primary); color: var(--bg); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">⭐ Star on GitHub</a>
+                        <a href="../index.html#quick-start" class="btn btn-secondary" style="border: 2px solid var(--primary); color: var(--primary); padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">⚡ Get Started</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
