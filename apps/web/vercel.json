@@ -1,0 +1,25 @@
+{
+  "buildCommand": "cd ../.. && pnpm install && pnpm build && cd apps/web",
+  "devCommand": "cd ../.. && pnpm dev --filter web",
+  "installCommand": "cd ../.. && pnpm install",
+  "framework": null,
+  "outputDirectory": "build/client",
+  "serverFiles": ["build/server/**"],
+  "routes": [
+    {
+      "src": "/build/client/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    }
+  ],
+  "functions": {
+    "build/server/index.js": {
+      "includeFiles": "build/**"
+    }
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "TURBO_TELEMETRY_DISABLED": "1"
+  }
+}
